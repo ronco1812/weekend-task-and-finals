@@ -9,28 +9,20 @@ mongoose
   .then(() => console.log("Database connected!"))
   .catch((err) => console.log(err));
 
-const StudentSchema = new mongoose.Schema({
-  name: {
+const UserSchema = new mongoose.Schema({
+  first_name: {
     type: String,
     required: true,
   },
-  surName: {
+  last_name: {
     type: String,
     required: true,
   },
-  birth: {
+  username: {
     type: String,
     required: true,
   },
-  phone: {
-    type: String,
-    unique: true,
-  },
-  gender: {
-    type: String,
-  },
-  courses: [{ type: String }],
 });
 
-const Student = mongoose.model("Student", StudentSchema);
-module.exports = Student;
+const User = mongoose.model("User", UserSchema);
+module.exports = User;
